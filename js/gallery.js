@@ -87,11 +87,19 @@ galleryContainer.innerHTML = galleryMarkup;
 
 galleryContainer.addEventListener('click', e => {
     e.preventDefault();
-    if (e.target.nodeName !== 'IMG') return;
+    if (e.target.nodeName !== 'IMG') 
+        return;
+    const currentImgUrl = e.target.dataset.source;
+    console.log(currentImgUrl);
+
+    const instance = basicLightbox.create(`<img width ="1000" height ="600" src="${currentImgUrl}">`);
+
+    
+    instance.show(); 
+});
+
+
+
+ 
   
-    const liElem = e.target.closest('li');
-    const id = liElem.dataset.id;
-    const product = images.find(el => el.id == id);
-  
-    // showModal(image);
-  });
+
