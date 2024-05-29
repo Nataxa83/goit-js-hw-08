@@ -67,6 +67,7 @@ const images = [
 
     const galleryContainer = document.querySelector('.gallery');
    
+   
     const galleryMarkup = images.map(({preview, original, description})=>
      {
         return `<li class="gallery-item">
@@ -74,7 +75,7 @@ const images = [
           <img
             class="gallery-image"
             src="${preview}"
-            data-source="large-image.jpg"
+            data-source="${original}"
             alt="${description}"
           />
         </a>
